@@ -37,8 +37,7 @@ export default {
           </style>
       </head>
       <body>
-          <h1>✨ Under Development ✨</h1>
-          <p>FishcakePGM is getting cuter. Please come back later!</p>
+          <h1> Under Development </h1>
           <img src="https://i.pinimg.com/originals/2c/27/d1/2c27d1186016923c8ebca12d9246dc16.gif" alt="Cute Construction" />
       </body>
       </html>
