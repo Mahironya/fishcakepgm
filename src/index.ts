@@ -1,5 +1,6 @@
 import { styles } from "./styles";
 import { scripts } from "./scripts";
+import { articlesHtml } from "./articles";
 
 const html = `
 <!DOCTYPE html>
@@ -15,16 +16,17 @@ const html = `
         <div class="container nav-content">
             <a href="/" class="logo">Fishcake Team</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="dropdown">
-                    <a href="#projects">Projects ▾</a>
+                    <a href="/#projects">Projects ▾</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#web">Web Apps</a></li>
-                        <li><a href="#mobile">Mobile</a></li>
-                        <li><a href="#tools">Tools</a></li>
+                        <li><a href="/#web">Web Apps</a></li>
+                        <li><a href="/#mobile">Mobile</a></li>
+                        <li><a href="/#tools">Tools</a></li>
                     </ul>
                 </li>
-                <li><a href="#about">About Us</a></li>
+                <li><a href="/articles">Articles</a></li>
+                <li><a href="/#about">About Us</a></li>
             </ul>
         </div>
     </nav>
@@ -35,7 +37,7 @@ const html = `
             <p class="hero-copy">
                 We create innovative digital solutions for modern problems.
             </p>
-            <a href="#projects" class="btn">View Our Work</a>
+            <a href="/#projects" class="btn">View Our Work</a>
         </div>
     </section>
 
@@ -96,6 +98,12 @@ export default {
         if (url.pathname === "/app.js") {
             return new Response(scripts, {
                 headers: { "content-type": "application/javascript; charset=UTF-8" },
+            });
+        }
+
+        if (url.pathname === "/articles") {
+            return new Response(articlesHtml, {
+                headers: { "content-type": "text/html; charset=UTF-8" },
             });
         }
 
